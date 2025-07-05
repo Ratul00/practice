@@ -61,7 +61,7 @@ void main() {
 
   print(result);
 }
-/*
+
 
 void main() {
   List<Map<String, dynamic>> students = [
@@ -90,4 +90,3 @@ void main() {
   print(sortedAvg);
 }
 
-*/
