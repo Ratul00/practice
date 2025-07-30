@@ -11,7 +11,7 @@ class Myapp extends StatelessWidget{
 
     return MaterialApp(
 
-      title: 'Fast flutter app',
+      title: 'Assignment App',
       home: Home(),
 
 
