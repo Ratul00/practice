@@ -1,3 +1,6 @@
+import 'package:fast_flutter_project/module8/class1.dart';
+import 'package:fast_flutter_project/module8/class2.dart';
+import 'package:fast_flutter_project/module8/live_test_m10.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -11,8 +14,8 @@ class Myapp extends StatelessWidget{
 
     return MaterialApp(
 
-      title: 'Assignment App',
-      home: Home(),
+      title: 'Live test',
+      home: livetest(),
 
 
     );

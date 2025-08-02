@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class class1 extends StatelessWidget {
-  const class1({super.key});
+class livetest extends StatelessWidget {
+  const livetest({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,10 @@ class class1 extends StatelessWidget {
       ),
       body: Column(
         children: [
+
+          SizedBox(height: 50,),
+
+
           Padding(
             padding: const EdgeInsets.all(9.0),
             child: TextField(
@@ -116,7 +120,7 @@ class class1 extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 40,),
           SizedBox(
             height: 40,
             width: 200,
