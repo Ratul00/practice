@@ -6,10 +6,9 @@ class livetest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    TextEditingController name = TextEditingController();
-    TextEditingController age = TextEditingController();
-    TextEditingController salary = TextEditingController();
+    final formkey = GlobalKey<FormState>();
 
+    // its working without TextEditingController
 
     return Scaffold(
       appBar: AppBar(
@@ -21,165 +20,108 @@ class livetest extends StatelessWidget {
 
           SizedBox(height: 50,),
 
-
           Padding(
-            padding: const EdgeInsets.all(9.0),
-            child: TextField(
-              keyboardType: TextInputType.number,
-              controller: name,
-              decoration: InputDecoration(
-                hintText: "Enter your name",
-                labelText: "Name",
+            padding: const EdgeInsets.all(8.0),
+            child: Form(
 
-                hintStyle: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black26
-                ),
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                ),
+                key: formkey,
+                child: Column(
 
-                // prefixIcon: Icon(
-                //     Icons.phone,
-                // ),
-                // suffixIcon: Icon(
-                //     Icons.check
-                // ),
+                  children: [
 
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                    TextFormField(
+                      decoration: InputDecoration(
 
-                )
-              ),
-            ),
+                          hintText: "Enter Your Name",
+                          labelText: "Name",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )
+                      ),
+                      validator: (value){
+                        if(value == null || value.isEmpty)
+                        {
+                          return "Please enter your name";
+                        }
+                        else
+                        {
+                          return null;
+                        }
+                      },
+                    ),
+
+                    SizedBox(height: 20),
+
+                    TextFormField(
+                      decoration: InputDecoration(
+
+                          hintText: "Enter your Age",
+                          labelText: "Age ",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )
+                      ),
+
+                      validator: (value){
+                        if(value == null || value.isEmpty)
+                        {
+                          return "Please enter your age";
+                        }
+                        else
+                        {
+                          return null;
+                        }
+                      },
+                    ),
+
+                    SizedBox(height: 20),
+
+                    TextFormField(
+
+                      decoration: InputDecoration(
+
+                          hintText: "Enter your Salary",
+                          labelText: "Salary ",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )
+                      ),
+
+                      validator: (value){
+                        if(value == null || value.isEmpty)
+                        {
+                          return "Please enter your salary";
+                        }
+                        else
+                        {
+                          return null;
+                        }
+                      },
+                    ),
+
+                    SizedBox(height: 30,),
+
+                    SizedBox(
+                      width: 200,
+                      child: ElevatedButton(onPressed: (){
+
+                        if(formkey.currentState!.validate())
+                        {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("Employe Added"))
+
+                          );
+
+                        }
+
+                      }, child: Text("Add Employe"),),
+                    ),
+
+                  ],
+
+                )),
           ),
-          SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.all(9.0),
-            child: TextField(
-              keyboardType: TextInputType.number,
-              controller: age,
-              decoration: InputDecoration(
-                  hintText: "Enter your age",
-                  labelText: "Age",
 
-                  hintStyle: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black26
-                  ),
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                  ),
-
-                  // prefixIcon: Icon(
-                  //     Icons.phone,
-                  // ),
-                  // suffixIcon: Icon(
-                  //     Icons.check
-                  // ),
-
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-
-                  )
-              ),
-            ),
-          ),
-          SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.all(9.0),
-            child: TextField(
-              keyboardType: TextInputType.number,
-              controller: salary,
-              decoration: InputDecoration(
-                  hintText: "Enter your Salary",
-                  labelText: "Salary",
-
-                  hintStyle: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black26
-                  ),
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                  ),
-
-                  // prefixIcon: Icon(
-                  //     Icons.phone,
-                  // ),
-                  // suffixIcon: Icon(
-                  //     Icons.check
-                  // ),
-
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-
-                  )
-              ),
-            ),
-          ),
-          SizedBox(height: 40,),
-          SizedBox(
-            height: 40,
-            width: 200,
-            child: ElevatedButton(onPressed: (){
-
-              if(name.text.isEmpty || age.text.isEmpty || salary.text.isEmpty){
-
-                ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Please enter all value"))
-                );
-
-              }
-              else
-                {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Employe Added"))
-                  );
-
-                }
-
-              // else if(phone.text.length < 11 || phone.text.length > 11){
-              //   ScaffoldMessenger.of(context).showSnackBar(
-              //       SnackBar(content: Text("Please enter a Valid phone number"))
-              //   );
-              //}
-              // else {
-              //   if(pass.text.isEmpty){
-              //
-              //     ScaffoldMessenger.of(context).showSnackBar(
-              //     SnackBar(content: Text("Please enter Your Password"))
-              //     );
-              //   }
-              //   else{
-              //    /* ScaffoldMessenger.of(context).showSnackBar(
-              //         SnackBar(content: Text(phone.text))
-              //     );
-              //     ScaffoldMessenger.of(context).showSnackBar(
-              //         SnackBar(content: Text(pass.text))
-              //     );*/
-              //
-              //     ScaffoldMessenger.of(context).showSnackBar(
-              //       SnackBar(
-              //         content: Column(
-              //           mainAxisSize: MainAxisSize.min,
-              //           crossAxisAlignment: CrossAxisAlignment.start,
-              //           children: [
-              //             Text(phone.text),
-              //             Text(pass.text),
-              //           ],
-              //         ),
-              //         duration: Duration(seconds: 3),
-              //       ),
-              //     );
-              //
-              //   }
-              // }
-            }, child: Text("ADD EMPLOYE")),
-
-          )
         ],
       ),
     );
