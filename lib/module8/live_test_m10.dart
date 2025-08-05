@@ -79,7 +79,6 @@ class livetest extends StatelessWidget {
                     TextFormField(
 
                       decoration: InputDecoration(
-
                           hintText: "Enter your Salary",
                           labelText: "Salary ",
                           border: OutlineInputBorder(
@@ -109,9 +108,7 @@ class livetest extends StatelessWidget {
                         {
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text("Employe Added"))
-
                           );
-
                         }
 
                       }, child: Text("Add Employe"),),

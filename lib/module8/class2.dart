@@ -1,4 +1,5 @@
 import 'package:fast_flutter_project/module8/class1.dart';
+import 'package:fast_flutter_project/module8/list_view.dart';
 import 'package:flutter/material.dart';
 
 
@@ -7,7 +8,8 @@ class class2 extends StatelessWidget {
 
   final formkey = GlobalKey<FormState>();
 
-  // TextEditingController phone = TextEditingController();
+   TextEditingController phone = TextEditingController();
+   TextEditingController name = TextEditingController();
   // TextEditingController pass = TextEditingController();
 
   @override
@@ -57,7 +59,31 @@ class class2 extends StatelessWidget {
               children: [
 
                 TextFormField(
-                  //controller: phone,
+                   controller: name,
+                  decoration: InputDecoration(
+                      hintText: "enter name",
+                      labelText: "name ",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      )
+                  ),
+
+                  validator: (value){
+                    if(value == null || value.isEmpty)
+                    {
+                      return "Please enter your name";
+                    }
+                    else
+                    {
+                      return null;
+                    }
+                  },
+                ),
+
+                SizedBox(height: 20,),
+
+                TextFormField(
+                  controller: phone,
                   decoration: InputDecoration(
 
                     hintText: "Phone Number",
@@ -82,8 +108,8 @@ class class2 extends StatelessWidget {
 
                 TextFormField(
                  // controller: pass,
+                  obscureText: true,
                   decoration: InputDecoration(
-
                       hintText: "enter password",
                       labelText: "password ",
                       border: OutlineInputBorder(
@@ -116,7 +142,7 @@ class class2 extends StatelessWidget {
 
                         );
 
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> class1())); // page change here
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> listVew(num: phone.text, name: name.text,))); // page change here
                         
                       }
 
