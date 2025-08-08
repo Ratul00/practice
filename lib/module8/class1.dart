@@ -58,7 +58,7 @@ class class1 extends StatelessWidget {
               controller: age,
               decoration: InputDecoration(
                   hintText: "Enter your age",
-                  labelText: "Age",
+                  //labelText: "Age",
 
                   hintStyle: TextStyle(
                       fontSize: 20,

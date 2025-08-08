@@ -24,13 +24,14 @@ class class2 extends StatelessWidget {
       body: Column(
         children: [
 
+          SizedBox(height: 20,),
+
           Center(
-            child: Image.network(
+            child: CircleAvatar(
 
-              "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/420432537_2174577002879860_2326149967953623203_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGoSL3Fh1IHvFmziOu5AUnpeYHfLQAacnh5gd8tABpyeImS0Ps8F3fzt3KvdYab2T-Ei_nE4Wf_9I-AcLQ5il2d&_nc_ohc=XTv0rpJgr_oQ7kNvwGdMgTt&_nc_oc=AdmRXd5KadnKZL5fz9ouy8N-2MHwNxilnlYZRhuk5PEjeIJA7Th44Q3pFwbkQf4Oucc&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=jUA-WZht7SNL5VbzG84rAw&oh=00_AfRE15ZAAIIEc8-FcZI3AxdrH-jtPR-GcRHPUetwfWaOcg&oe=68926727",
-
-              height: 200,
-              width: 200,
+              radius: 100,
+              backgroundImage: NetworkImage(
+                "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/503988465_2566611823676374_7827394901783169780_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeEvB6etrJr3aCKboja0DZlewy9xdHP7pUDDL3F0c_ulQBb1i_CFtmmI-LRelz-WRSdLKHfKJrSHam4RlO8ZcKb9&_nc_ohc=wFy1FXafsHgQ7kNvwGpJNBL&_nc_oc=AdmcLI1O-xeSF_n4Xsdxj0IV2pHSEOFG50McA6LmSUQoEAKQEPL8P62FTqh5-GKJfZw&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=8GqHdLs7YvE1ZiBW7-RG0g&oh=00_AfVwgTD4UrcKMrWmJMyhbOF80Srqk-AokElHr79GYLAccw&oe=689AC2AB",),
 
             ),
           ),
@@ -129,7 +130,7 @@ class class2 extends StatelessWidget {
                   },
                 ),
 
-                SizedBox(height: 10,),
+                SizedBox(height: 20,),
                 
                 SizedBox(
                   width: 200,
