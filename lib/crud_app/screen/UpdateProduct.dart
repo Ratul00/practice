@@ -108,9 +108,15 @@ class _UpdateProduct extends State<UpdateProduct> {
         
                 SizedBox(height: 20,),
         
-                FilledButton(
-                    onPressed: _update,
-                    child: Text("Update Product")),
+                Visibility(
+                  visible: _updateProductProgress == false,
+                  replacement: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                  child: FilledButton(
+                      onPressed: _update,
+                      child: Text("Update Product")),
+                ),
         
               ],
         
