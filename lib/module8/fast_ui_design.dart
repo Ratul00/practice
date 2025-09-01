@@ -24,6 +24,10 @@ class uidesign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Size screenSize = MediaQuery.of(context).size;
+
+
     return Scaffold(
       
       // appBar: AppBar(
@@ -68,7 +72,7 @@ class uidesign extends StatelessWidget {
                   left: 30,
         
                   child: Container(
-                    width: 250,
+                    width: screenSize.width*0.6,
         
                     decoration: BoxDecoration(
         
