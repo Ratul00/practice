@@ -51,6 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
       }
 
+    }else{
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(response.statusCode.toString())));
+
     }
 
     _reload = false;
